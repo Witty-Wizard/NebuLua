@@ -12,11 +12,10 @@ NebuLua is a Game emulator for running games inside of terminal. This project is
 > [!IMPORTANT]
 > The project includes lua as a submodule, so don't forget to recurse the submodules
 
-Clone the repository with submodules:
-
-    ```bash
-    git clone https://github.com/Witty-Wizard/NebuLua.git --recursive
-    ```
+**Clone the repository with submodules:**
+```sh
+git clone https://github.com/Witty-Wizard/NebuLua.git --recursive
+```
 
 ### 2. Building the Source Code
 
