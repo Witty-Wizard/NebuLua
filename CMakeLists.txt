@@ -3,17 +3,14 @@ project(NebuLua)
 
 set(CMAKE_C_STANDARD 11)
 
+add_subdirectory(lib)
+
 # Source files
 set(SRC_FILES src/main.c)
 
-# Lua files (use only onelua.c to avoid multiple definitions)
-set(LUA_FILES lib/lua/onelua.c)
-
-# Define a macro to disable Lua's main function
-add_definitions(-DLUA_USE_CUSTOM_MAIN)
-
 # Create the executable
-add_executable(NebuLua ${SRC_FILES} ${LUA_FILES})
+add_executable(${PROJECT_NAME} ${SRC_FILES})
 
-# Include Lua headers
-target_include_directories(NebuLua PRIVATE lib/lua)
+target_link_libraries(${PROJECT_NAME} PRIVATE LuaLib)
+
+target_include_directories(${PROJECT_NAME} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/lib/lua")
